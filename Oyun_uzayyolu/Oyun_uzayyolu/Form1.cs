@@ -21,6 +21,8 @@ namespace Oyun_uzayyolu
             Bomb.Visible = false;
             Bomb1.Visible = false;
             Bomb2.Visible = false;
+            fire.Visible = false;
+            fire1.Visible = false;
 
         }
 
@@ -44,18 +46,15 @@ namespace Oyun_uzayyolu
                     timer1.Start();
                     Bomb.Visible = true;
                     int yer = SpaceShip.Location.X + (SpaceShip.Width);
-                    int yer1 = SpaceShip.Location.Y + (SpaceShip.Height / 4);
+                    int yer1 = SpaceShip.Location.Y + (SpaceShip.Height / 3);
                     Bomb.Location = new Point(yer , yer1);
-                    if (SpaceShip.Location.X > Bomb.Location.x)
+                    if (SpaceShip.Location.X > Bomb.Location.X)
                     {
-                        Bomb1.Visible = true;
-                        Bomb1.Location = new Point(yer, yer1);
+                        Bomb.Visible = true;
+                        Bomb.Location = new Point(yer, yer1);
                     }
-
-
                     break;
-                default:
-                    break;
+          
             }
                
 
@@ -76,6 +75,10 @@ namespace Oyun_uzayyolu
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -88,14 +91,17 @@ namespace Oyun_uzayyolu
             if (Bomb.Location.X < genislik)
             {
                 Bomb.Left += 10;
-                Bomb1.Left += 10;
 
             }
             else
             {
                 timer1.Stop();
                 Bomb.Visible = false;
-                Bomb1.Visible = false;
+                fire.Visible = true;
+                int byer = Bomb.Location.X + (SpaceShip.Width);
+                int byer1 = Bomb.Location.Y + (SpaceShip.Height / 7);
+                fire.Location = new Point(byer-150,byer1);
+
             }
         }
 
