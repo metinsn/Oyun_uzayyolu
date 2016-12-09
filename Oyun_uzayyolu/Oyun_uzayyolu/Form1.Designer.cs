@@ -38,12 +38,15 @@
             this.fire = new System.Windows.Forms.PictureBox();
             this.fire1 = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.fire2 = new System.Windows.Forms.PictureBox();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SpaceShip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bomb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bomb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bomb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fire)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fire1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fire2)).BeginInit();
             this.SuspendLayout();
             // 
             // SpaceShip
@@ -59,7 +62,7 @@
             // Bomb
             // 
             this.Bomb.Image = ((System.Drawing.Image)(resources.GetObject("Bomb.Image")));
-            this.Bomb.Location = new System.Drawing.Point(12, 202);
+            this.Bomb.Location = new System.Drawing.Point(146, 134);
             this.Bomb.Name = "Bomb";
             this.Bomb.Size = new System.Drawing.Size(30, 30);
             this.Bomb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,8 +76,9 @@
             // 
             // Bomb1
             // 
+            this.Bomb1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Bomb1.Image = ((System.Drawing.Image)(resources.GetObject("Bomb1.Image")));
-            this.Bomb1.Location = new System.Drawing.Point(12, 245);
+            this.Bomb1.Location = new System.Drawing.Point(146, 134);
             this.Bomb1.Name = "Bomb1";
             this.Bomb1.Size = new System.Drawing.Size(30, 30);
             this.Bomb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,8 +87,9 @@
             // 
             // Bomb2
             // 
+            this.Bomb2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Bomb2.Image = ((System.Drawing.Image)(resources.GetObject("Bomb2.Image")));
-            this.Bomb2.Location = new System.Drawing.Point(12, 288);
+            this.Bomb2.Location = new System.Drawing.Point(146, 134);
             this.Bomb2.Name = "Bomb2";
             this.Bomb2.Size = new System.Drawing.Size(30, 30);
             this.Bomb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -96,7 +101,7 @@
             this.fire.Image = ((System.Drawing.Image)(resources.GetObject("fire.Image")));
             this.fire.Location = new System.Drawing.Point(12, 331);
             this.fire.Name = "fire";
-            this.fire.Size = new System.Drawing.Size(30, 29);
+            this.fire.Size = new System.Drawing.Size(30, 30);
             this.fire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fire.TabIndex = 4;
             this.fire.TabStop = false;
@@ -104,9 +109,9 @@
             // fire1
             // 
             this.fire1.Image = ((System.Drawing.Image)(resources.GetObject("fire1.Image")));
-            this.fire1.Location = new System.Drawing.Point(12, 366);
+            this.fire1.Location = new System.Drawing.Point(48, 331);
             this.fire1.Name = "fire1";
-            this.fire1.Size = new System.Drawing.Size(38, 39);
+            this.fire1.Size = new System.Drawing.Size(43, 37);
             this.fire1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fire1.TabIndex = 5;
             this.fire1.TabStop = false;
@@ -114,12 +119,29 @@
             // timer2
             // 
             this.timer2.Interval = 20;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // fire2
+            // 
+            this.fire2.Image = ((System.Drawing.Image)(resources.GetObject("fire2.Image")));
+            this.fire2.Location = new System.Drawing.Point(97, 331);
+            this.fire2.Name = "fire2";
+            this.fire2.Size = new System.Drawing.Size(52, 45);
+            this.fire2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fire2.TabIndex = 6;
+            this.fire2.TabStop = false;
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 20;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 464);
+            this.Controls.Add(this.fire2);
             this.Controls.Add(this.fire1);
             this.Controls.Add(this.fire);
             this.Controls.Add(this.Bomb2);
@@ -136,6 +158,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Bomb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fire)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fire1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fire2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,6 +173,8 @@
         private System.Windows.Forms.PictureBox fire;
         private System.Windows.Forms.PictureBox fire1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.PictureBox fire2;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 
